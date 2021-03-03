@@ -42,9 +42,9 @@ const routes = [
   {path: '/', component: HomeComponent},
   {path: '/about', component: AboutComponent},
   {path: '/menu', component: MenuComponent},
-  {path: '/menu:breakfast',component: BreakfastComponent},
-  {path: '/menu:lunch', component: LunchComponent},
-  {path: '/menu:dinner', component: DinnerComponent}
+  {path: '/menu/breakfast',component: BreakfastComponent},
+  {path: '/menu/lunch', component: LunchComponent},
+  {path: '/menu/dinner', component: DinnerComponent}
 ];
 
 const router = new VueRouter({

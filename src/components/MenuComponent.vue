@@ -14,7 +14,7 @@
                     <div class="card">
                         <img class="card-image-top" src="../assets/images/lunch-1.jpeg">
                         <a class="btn bg-transparent text-light" type="button">
-                            <router-link class="router-link" to="/menu:breakfast">BREAKFAST</router-link>
+                            <router-link class="router-link" to="/menu/breakfast">BREAKFAST</router-link>
                         </a>
                     </div>
                 </div>
@@ -22,7 +22,7 @@
                     <div class="card">
                         <img class="card-image-top" src="../assets/images/lunch-2.jpeg">
                         <a class="btn bg-transparent text-light" type="button">
-                            <router-link class="router-link" to="/menu:lunch">LUNCH</router-link>
+                            <router-link class="router-link" to="/menu/lunch">LUNCH</router-link>
                         </a>
                     </div>
                 </div>
@@ -30,7 +30,7 @@
                     <div class="card">
                         <img class="card-image-top" src="../assets/images/lunch-3.jpeg">
                         <a class="btn bg-transparent text-light" type="button">
-                            <router-link class="router-link" to="/menu:dinner">DINNER</router-link>
+                            <router-link class="router-link" to="/menu/dinner">DINNER</router-link>
                         </a>
                     </div>
                 </div>
