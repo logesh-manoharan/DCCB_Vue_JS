@@ -1,7 +1,6 @@
 <template>
     <div class="universe">
         <div class="container">
-            <header class="jumbotron"></header>
             <div class="row row-header text-center" style="color: #f6b319; border: 1px solid #f6b319; border-radius: 5px; padding: 10px;">
                 <div class="col-12 col-lg-12">
                     <h4>Menu Categories</h4>

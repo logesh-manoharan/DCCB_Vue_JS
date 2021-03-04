@@ -1,7 +1,6 @@
 <template>
     <div class="universe">
         <div class="container">
-            <header class="jumbotron"></header>
             <div class="row row-header">
                 <div class="col-12 col-lg-12">
                     <h2>About</h2>

@@ -1,6 +1,14 @@
 <template>
     <div class="universal">
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+
+        <NavigationMobile v-if="showNav" :class="{'open': showNav}" style="position: absolute; margin-top: 30px;"/>
+        <div class="navigation-icon" v-if="mobileView"
+         @click="showNav = !showNav"
+         style="background: #f6b319; padding: 10px 10px 20px; margin-right: 10px;">
+            <font-awesome-icon :icon="['fas', 'bars']" style=" font-size: 2rem;"></font-awesome-icon>
+        </div>
+        <NavigationComponent v-if="!mobileView"/>
+        <!-- <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
             <div class="container">
                 <ul class="navbar navbar-nav mr-auto">
                     <li class="nav-item"><a class="nav-link" href="#">
@@ -50,7 +58,7 @@
                                 </ul>
                             </div>
                             
-                            <!-- <b-dropdown id="dropdown-1" text="Dropdown Button" variant="transparent" class="m-md-2" style="background: #ffffff00;">
+                            <b-dropdown id="dropdown-1" text="Dropdown Button" variant="transparent" class="m-md-2" style="background: #ffffff00;">
                                 
                                 <b-dropdown-item>First Action</b-dropdown-item>
                                 <b-dropdown-item>Second Action</b-dropdown-item>
@@ -62,16 +70,16 @@
                                 <b-dropdown-divider></b-dropdown-divider>
                                 <b-dropdown-item active>Active action</b-dropdown-item>
                                 
-                            </b-dropdown> -->
+                            </b-dropdown> 
 
                             <div class="dropdown-menu fixed-top" id="dropDownNav">
                                 <a class="dropdown-item">BREAKFAST</a>
                                 <a class="dropdown-item">LUNCH</a>
                                 <a class="dropdown-item">DINNER</a>
-                                <!-- <router-link class="dropdown-header" to="/menu">Menus</router-link>
+                                 <router-link class="dropdown-header" to="/menu">Menus</router-link>
                                 <router-link class="dropdown-item" to="/menu/breakfast">BREAKFAST</router-link>
                                 <router-link class="dropdown-item" to="/menu/lunch">LUNCH</router-link>
-                                <router-link class="dropdown-item" to="/menu/dinner">DINNER</router-link> -->
+                                <router-link class="dropdown-item" to="/menu/dinner">DINNER</router-link>
                             </div>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="tel: +919080311157">+91 908031157 <font-awesome-icon :icon="['fas', 'phone']" /></a></li>
@@ -82,7 +90,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
             </div>
-        </nav>
+        </nav> -->
 
         <div class="content">
             <router-view></router-view>
@@ -128,16 +136,31 @@
 <script>
 // import HomeComponent from './HomeComponent.vue';
 
+import NavigationComponent from './NavigationComponent';
+import NavigationMobile from './NavigationMobile';
+
 export default {
     name: "MainComponent",
     components: {
+        NavigationComponent,
+        NavigationMobile
     },
     data() {
         return {
             homeActive: false,
             aboutActive: false,
-            menuActive: false
+            menuActive: false,
+            mobileView: false,
+            showNav: false
         }
+    },
+    methods: {
+        handleView() {
+            this.mobileView = screen.width <= 990;
+        }
+    },
+    created: function() {
+        this.handleView();
     },
     beforeMount: function() {
         var urlArray = window.location.href.toString().split('/');
@@ -230,4 +253,8 @@ export default {
      text-decoration: none;
      color: #f6b319;
  }
+
+ .open {
+    transform: translateY(50px);
+ } 
 </style>

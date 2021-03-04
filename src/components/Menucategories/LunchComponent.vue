@@ -1,7 +1,5 @@
 <template>
     <div class="universe">
-        <header class="jumbotron"></header>
-
         <ul class="breadcrumb bg-transparent">
             <li class="breadcrumb-item"><a href="#"><router-link to="/menu">Menu</router-link></a> /</li>
             <li class="breadcrum-item active">Lunch</li>
